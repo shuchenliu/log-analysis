@@ -1,12 +1,12 @@
 ## Log-Analysis
 
 ### Overview
-
+----
 This a python tool designed to analyze certain server log based on PostgreSQL and produce simple, meaningful resport.
 
 ### How to run
 
-####Dependencies:  
+#### Dependencies:  
 
 [Python v3 ](https://www.python.org/download/releases/3.0/)  
 [psycopg 2](http://initd.org/psycopg/download/)
@@ -23,7 +23,7 @@ This a python tool designed to analyze certain server log based on PostgreSQL an
 		`$ git clone https://github.com/shuchenliu/log-analysis.git`
 	
 ### SQL Views
-
+---
 Before running the python program, you need to define 2 views in PostgreSQL.
 
 Connect to the `news` database:  
@@ -56,6 +56,7 @@ create view ErrorRate as
 
 
 ### Output
+---
 Upon running the command  
 	`$ python log_analysis.py`  
 you would expect the terminal to display the report answering 3 data analysis questions, like indicated in the `log-analysis.txt` file.
