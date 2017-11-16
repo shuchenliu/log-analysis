@@ -6,21 +6,21 @@ import psycopg2
 DB_NAME = "news"
 
 # queries
-most_viewed_art_query = """select title, count
-                           from ViewStats
-                           order by count desc limit 3;"""
+most_viewed_art_query = """SELECT title, count
+                           FROM ViewStats
+                           ORDER BY count desc limit 3;"""
 
-most_popular_authors = """select authors.name, sum(ViewStats.count)
-                          from authors join ViewStats
-                          on authors.id = ViewStats.author
-                          group by authors.name
-                          order by sum(ViewStats.count) desc;"""
+most_popular_authors = """SELECT authors.name, sum(ViewStats.count)
+                          FROM authors JOIN ViewStats
+                          ON authors.id = ViewStats.author
+                          GROUP BY authors.name
+                          ORDER BY sum(ViewStats.count) DESC;"""
 
-error_rate_over = """select date, errorrate
-                     from ErrorRate
-                     where errorrate > 1
-                     group by date, errorrate
-                     order by errorrate desc"""
+error_rate_over = """SELECT date, errorrate
+                     FROM ErrorRate
+                     WHERE errorrate > 1
+                     GROUP BY date, errorrate
+                     ORDER BY errorrate DESC"""
 
 # questions:
 q1 = """1. What are the most popular 3articles of all time?\n"""
